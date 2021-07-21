@@ -91,3 +91,5 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
+
+config :info_sys, :wolfram, app_id: wolfram_app_id
