@@ -1,13 +1,10 @@
 # Rumbl.Umbrella
 
-there are a few things here
-it is from Programming Phoenix
+Phoenix umbrella implementation of Rumbl project from [Programming Phoenix](https://medium.com/pragmatic-programmers/table-of-contents-5017d6ee397).
 
-I'm setting a few variables in the environment, set them in a `devserver` script like so:
+requires the following environment variables to be set before running:
 ```bash
-#!/bin/bash
 export WOLFRAM_APP_ID="xxxxxxxx"
 export PG_PASSWORD="password"
 export PG_USER="user"
-mix phx.server
 ```
