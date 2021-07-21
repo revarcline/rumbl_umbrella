@@ -1,9 +1,28 @@
 use Mix.Config
 
+wolfram_app_id =
+  System.get_env("WOLFRAM_APP_ID") ||
+    raise """
+    environment variable WOLFRAM_APP_ID is missing.
+    """
+
+pg_user =
+  System.get_env("PG_USER") ||
+    raise """
+    environment variable PG_USER is missing.
+    """
+
+pg_password =
+  System.get_env("PG_PASSWORD") ||
+    raise """
+    environment variable PG_PASSWORD is missing.
+    """
 # Configure your database
 config :rumbl, Rumbl.Repo,
   database: "rumbl_dev",
   hostname: "localhost",
+  username: pg_user,
+  password: pg_password,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 
@@ -72,8 +91,3 @@ config :phoenix, :stacktrace_depth, 20
 
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
-
-# import username and password from secret dev file
-if File.exists?("config/dev.secret.exs") do
-  import_config "dev.secret.exs"
-end

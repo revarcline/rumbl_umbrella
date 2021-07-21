@@ -38,3 +38,6 @@ npm-debug.log
 
 # other secrets
 .env
+
+# dev server with secrets
+devserver
