@@ -37,8 +37,4 @@ npm-debug.log
 /config/*.secret.exs
 
 # other secrets
-.env
-
-# dev server with secrets
-devserver
-devmix
+.envrc
