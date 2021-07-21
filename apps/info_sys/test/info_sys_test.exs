@@ -35,4 +35,9 @@ defmodule InfoSysTest do
     results = InfoSys.compute("timeout", backends: [TestBackend], timeout: 10)
     assert results == []
   end
+
+  @tag :capture_log
+  test "compute/2 discards backend errors" do
+    assert InfoSys.compute("boom", backends: [TestBackend]) == []
+  end
 end
