@@ -24,7 +24,7 @@ defmodule RumblWeb.VideoViewTest do
   end
 
   test "renders new.html", %{conn: conn} do
-    owner = %Rumbl.Accounts.User{}
+    _owner = %Rumbl.Accounts.User{}
     changeset = Rumbl.Multimedia.change_video(%Rumbl.Multimedia.Video{})
     categories = [%Rumbl.Multimedia.Category{id: 123, name: "cats"}]
 
